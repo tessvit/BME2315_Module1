@@ -1,6 +1,7 @@
 # BME2315_Module1
 Tess Vithoulkas and Theresa Illicete
-Professor Pierce-Cottler
+
+Professor Peirce-Cottler
 
 Analyzing Alzheimer's Metadata and Protein Data
 
