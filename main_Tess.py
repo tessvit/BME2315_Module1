@@ -128,3 +128,46 @@ plt.ylabel('pTAU (pg/ug)') # Y axis label
 plt.title('Scatter Plot of Age at Death vs pTAU Concentration') # Main title of scatter plot
 plt.plot(X, model.predict(X), color="red")
 plt.show() # Prints the scatter plot
+
+
+# # Converted this to a bar graph since years of education is not continuous
+# # Lists for scatter plot: one for years of education and one for Amyloid Beta-42 concentration
+# patientEdu = []
+# patientAB42 = []
+
+# # Filling scatter plot lists with data from dataset to analyze years of education vs AB-42 concentration
+# # Patient years of education gets its own list and so does AB-42 concentration to analyze in the scatter plot
+# for patient in Patient.allPatients:
+#     patientEdu.append(patient.yearsOfEducation)
+# for patient in Patient.allPatients:
+#     patientAB42.append(patient.aBeta42)
+
+# # X variable becomes the data stored in patient years of education, and y variable becomes the data stored in AB42 concentration
+# X = [patientEdu]  # Independent variable
+# y = [patientAB42]   # Dependent variable
+
+# # Below reshapes the X and y values into an array for analyzing the slope and intercept of the line of best fit.
+# X = np.array(patientEdu).reshape(-1,1)
+# y = np.array(patientAB42)
+
+# # Establishes the Linear Regression model fit
+# model = LinearRegression()
+# model.fit(X,y)
+
+# # The slope, intercept, and r2 value variables are defined and assigned their values
+# slope = model.coef_[0]
+# intercept = model.intercept_
+# r2 = model.score(X, y)
+
+# # The equation is formed and then plotted on the scatter plot in the top right corner
+# equation = f"y = {slope:.2f}x + {intercept:.2f}\nR² = {r2:.2f}"
+# plt.text(X.max()-4, y.max(), equation, color="red", fontsize=12, verticalalignment='top') # Fix placement of text!!!
+
+# # Plots the scatter plot with the previously defined x and y variables in the color blue
+# plt.scatter(X, y, color='blue')
+# plt.plot(X, model.predict(X), color="red")
+# plt.xlabel('Years of Education') # X axis label
+# plt.ylabel('Amyloid Beta-42 (pg/ug)') # Y axis label
+# plt.title('Scatter Plot of Years of Education vs Amyloid Beta-42 Concentration') # Main title of scatter plot
+# plt.plot(X, model.predict(X), color="red")
+# plt.show() # Prints the scatter plot
